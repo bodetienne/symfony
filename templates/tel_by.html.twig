@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  {% for tel in tels %}
+      {{ tel.marque }} - {{ tel.type }} - {{ tel.taille }} |
+  {% endfor %}
+{% endblock %}

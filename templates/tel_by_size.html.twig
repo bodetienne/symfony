@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{% for bigtel in bigtels %}
+
+      {{ bigtel.marque }} - {{ bigtel.type }} - {{ bigtel.taille }} |
+  {% endfor %}
+{% endblock %}

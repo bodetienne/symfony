@@ -1,0 +1,76 @@
+hello_index:
+    path: /hello/
+    controller: App\Controller\HelloController::index
+    requirements:
+        prenom: '[A-Za-z]+'
+
+hello_perso:
+    path: /hello/{prenom}
+    controller: App\Controller\HelloController::index_prenom
+    requirements:
+        prenom: '[A-Za-z]+'
+
+hello_perso_index:
+    path: /hello/{prenom}/{age}
+    controller: App\Controller\HelloController::index_perso
+    requirements:
+        prenom: '[A-Za-z]+'
+        age: '[0-9]+'
+
+hello_perso_index_error1:
+    path: /hello/{age}/{prenom}
+    controller: App\Controller\HelloController::index_perso_error1
+    requirements:
+        age: '[0-9]+'
+        prenom: '[A-Za-z]+'
+
+add_function:
+    path: /telephone/add/{marque}/{type}/{taille}
+    controller: App\Controller\TelephoneController::add
+    requirements:
+        marque: '[A-Za-z]+'
+        type: '[A-Za-z]+'
+        taille: '[A-Za-z]+'
+
+# modify_function:
+#     path: /telephone/modify/{id}/{marque}/{type}/{taille}
+#     controller: App\Controller\TelephoneController::modify
+#     requirements:
+#         id: '[0-9]+'
+#         marque: '[A-Za-z]+'
+#         type: '[A-Za-z]+'
+#         taille: '[0-9]+'
+
+delete_function:
+    path: /telephone/delete/{id}
+    controller: App\Controller\TelephoneController::delete
+    requirements:
+        id: '[0-9]+'
+
+index:
+    path: /telephone/
+    controller: App\Controller\TelephoneController::index
+
+bigTel:
+    path: /bigtel/
+    controller: App\Controller\TelephoneController::bigTel
+
+recherche_marque:
+    path: /telephone/search/{marque}
+    controller: App\Controller\TelephoneController::recherche_marque
+    requirements:
+        marque: '[A-Za-z]+'
+
+url_request:
+    path: /telephone/advancedsearch/{marque}/{type}
+    controller: App\Controller\TelephoneController::url_request
+
+form_tel:
+    path: /telephone/new/
+    controller: App\Controller\TelephoneController::form_tel
+
+modify:
+    path: /telephone/modify/{id}/
+         controller: App\Controller\TelephoneController::modify
+         requirements:
+             id: '[0-9]+'
