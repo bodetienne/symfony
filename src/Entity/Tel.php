@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TelRepository")
@@ -18,16 +19,24 @@ class Tel
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $marque;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $type;
 
     /**
      * @ORM\Column(type="float")
+     * @Assert\Range(
+     *      min = 3,
+     *      max = 7,
+     *      minMessage = "Le téléphone doit faire au moins {{ limit }} pouces pour entrer",
+     *      maxMessage = "Le téléphone doit faire moins de {{ limit }} pouces pour entrer"
+     * )
      */
     private $taille;
 

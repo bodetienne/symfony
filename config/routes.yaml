@@ -71,6 +71,6 @@ form_tel:
 
 modify:
     path: /telephone/modify/{id}/
-         controller: App\Controller\TelephoneController::modify
-         requirements:
-             id: '[0-9]+'
+    controller: App\Controller\TelephoneController::modify
+    requirements:
+        id: '[0-9]+'
