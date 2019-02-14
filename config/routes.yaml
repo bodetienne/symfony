@@ -74,3 +74,15 @@ modify:
     controller: App\Controller\TelephoneController::modify
     requirements:
         id: '[0-9]+'
+
+mail:
+    path: /mail/{name}/
+    controller: App\Controller\HelloController::sendMail
+    requirements:
+        name: '[A-Za-z]+'
+
+sweatmessage:
+    path: /sweatmessage/
+    controller: App\Controller\HelloController::messageGenerator
+    requirements:
+        name: '[A-Za-z]+'

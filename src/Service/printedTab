@@ -1,0 +1,15 @@
+<?php
+
+// src/Service/SweatMessageGenerator.php
+namespace App\Service;
+
+class printedTab
+{
+
+  public class getPrintedTab(){
+    
+  }
+
+}
+
+?>
